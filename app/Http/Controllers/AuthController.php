@@ -19,7 +19,7 @@ class AuthController extends Controller
 
         $validator = Validator::make($request->all(), [
             'first_name' => 'bail|required|string|max:50',
-            'last_name' => 'bail|nullable|string|max:50',
+            'last_name' => 'bail|required|string|max:50',
             'email' => 'bail|required|email',
             'password' => 'bail|required|min:5|regex:/^(?=.*[1-9\W])(?=.*[a-zA-Z]).+$/',
         ],

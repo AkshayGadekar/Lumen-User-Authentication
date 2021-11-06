@@ -25,7 +25,7 @@ trait Response{
         
     }
 
-    public function validationErrors($data=null){
+    public function validationErrors($data){
         
         return response()->json([
             "success" => false,
