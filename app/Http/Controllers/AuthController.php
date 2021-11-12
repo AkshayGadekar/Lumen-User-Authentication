@@ -74,7 +74,7 @@ class AuthController extends Controller
             return $this->error("User registered successfully but could not logged in, try logging in please!", $statusCode, $content);
         }
         
-        return $this->success($content, "User registered and logged in successfully.");
+        return $this->success($content, "User registered and logging in successfully.");
 
     }
 
