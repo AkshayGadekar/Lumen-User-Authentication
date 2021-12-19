@@ -19,7 +19,7 @@ $router->get('/', function () use ($router) {
 
 
 //email verification
-$router->get('email-verification-link/{token}', ["as" => "user.emailVerificationLink", "uses" => "AuthController@emailVerificationLink"]);
+$router->get('email-verification-link/{token}', ["middleware" => "throttle:5,1", "as" => "user.emailVerificationLink", "uses" => "AuthController@emailVerificationLink"]);
 
 //guest routes
 $router->group(['prefix' => 'api/v1'], function () use ($router) {

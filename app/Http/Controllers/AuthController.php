@@ -93,7 +93,7 @@ class AuthController extends Controller
 
         if($validator->fails()) {
 
-            return $this->validationErrors($validator->errors());
+            //return $this->validationErrors($validator->errors());
 
         }
 
