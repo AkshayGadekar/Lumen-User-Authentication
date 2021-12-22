@@ -19,10 +19,10 @@ $router->get('/', function () use ($router) {
 
 
 //email verification
-$router->get('email-verification-link/{token}', ["middleware" => "throttle:5,1", "as" => "user.emailVerificationLink", "uses" => "AuthController@emailVerificationLink"]);
+$router->get('email-verification-link/{token}', ["middleware" => "throttle:10,1", "as" => "user.emailVerificationLink", "uses" => "AuthController@emailVerificationLink"]);
 
 //guest routes
-$router->group(['prefix' => 'api/v1'], function () use ($router) {
+$router->group(['prefix' => 'api/v1', "middleware" => "throttle:40,1"], function () use ($router) {
     //login-signup
     $router->post('login', ["uses" => "AuthController@logIn"]);
     $router->post('signup', ["uses" => "AuthController@signUp"]);
@@ -34,7 +34,7 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
 });
 
 //auth routes
-$router->group(['prefix' => 'api/v1', 'middleware' => 'auth'], function () use ($router) {
+$router->group(['prefix' => 'api/v1', 'middleware' => ["throttle:60,1", 'auth']], function () use ($router) {
     $router->get('get-user', ["uses" => "AuthController@getUser"]);
     
     //logout
