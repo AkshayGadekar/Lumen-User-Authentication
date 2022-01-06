@@ -132,7 +132,7 @@ class AuthController extends Controller
             }
             
             $rand_md5 = md5(uniqid(rand()));
-            $user->update(['email_verified_at'=>date('Y-m-d H:i:s'), 'token' => $rand_md5]);
+            $user->update(['email_verified_at'=>date('Y-m-d H:i:s'), 'token' => $rand_md5, 'status' => 1]);
             
             //redirect to home "Email verified successfully, you can login now"
             return redirect(env("APP_URL"));
