@@ -11,3 +11,5 @@ It gives following things out of the box:
 - [User Model Code](https://github.com/AkshayGadekar/Lumen-User-Authentication/blob/master/app/Models/User.php)
 - [User Migration Table](https://github.com/AkshayGadekar/Lumen-User-Authentication/blob/master/database/migrations/2021_09_15_160435_create_users_table.php)
 - [Auth APIs](https://github.com/AkshayGadekar/Lumen-User-Authentication/blob/master/routes/web.php)
+
+Also, you can take clone of this repo, update dependencies in composer.json according to your needs and run `composer update`. You will have fresh Lumen framework with user authentication code totally ready. 
